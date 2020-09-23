@@ -28,7 +28,7 @@ public class GameController {
 	public String lista(
 				Model model
 			) {
-		model.addAttribute("games", gameService.obterLista());
+		model.addAttribute("games", gameService.obterGames());
 		
 		return "game/lista";
 	}
@@ -36,8 +36,7 @@ public class GameController {
 	@PostMapping(value = "/game/incluir")
 	public String incluir(
 				Game game
-			) {
-		
+			) {		
 		gameService.incluir(game);
 		
 		return "redirect:/games";

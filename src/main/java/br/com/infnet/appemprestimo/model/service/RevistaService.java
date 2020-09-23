@@ -7,27 +7,17 @@ import org.springframework.stereotype.Service;
 
 import br.com.infnet.appemprestimo.model.clients.IRevistaClient;
 import br.com.infnet.appemprestimo.model.negocio.Revista;
-import br.com.infnet.appemprestimo.model.repository.IRevistaRepository;
 
 @Service
-public class RevistaService {
+public class RevistaService extends ProdutoService {
 
-	@Autowired private IRevistaRepository revistaRepository;
 	@Autowired private IRevistaClient revistaClient;
 	
-	public List<Revista> obterLista(){
+	public List<Revista> obterRevistas(){
 		return revistaClient.obterLista();
 	}
 
 	public Revista obterPorId(Integer id) {
 		return revistaClient.obterPorId(id);
-	}
-	
-	public void incluir(Revista revista) {
-		revistaRepository.save(revista);
-	}
-
-	public void excluir(Integer id) {
-		revistaRepository.deleteById(id);		
 	}
 }

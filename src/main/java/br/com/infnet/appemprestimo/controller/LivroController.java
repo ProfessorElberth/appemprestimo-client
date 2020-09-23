@@ -28,7 +28,7 @@ public class LivroController {
 	public String lista(
 				Model model
 			) {
-		model.addAttribute("livros", livroService.obterLista());
+		model.addAttribute("livros", livroService.obterLivros());
 		
 		return "livro/lista";
 	}

@@ -20,7 +20,7 @@
 			  <a class="navbar-brand" href="/sair">AppEmprestimo</a>
 			</nav>	
 
-			<form action="/usuario" method="post">
+			<form action="/usuario/incluir" method="post">
 			
 			  <div class="form-group">
 			    <label for="usr">Nome:</label>

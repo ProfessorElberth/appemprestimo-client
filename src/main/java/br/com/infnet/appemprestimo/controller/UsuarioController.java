@@ -15,7 +15,7 @@ public class UsuarioController {
 	@Autowired 
 	private UsuarioService usuarioService;
 
-	@RequestMapping(value = "/usuario", method = RequestMethod.POST)
+	@RequestMapping(value = "/usuario/incluir", method = RequestMethod.POST)
 	public String incluir(
 				Model model,
 				Usuario usuario

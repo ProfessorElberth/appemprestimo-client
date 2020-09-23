@@ -1,15 +1,12 @@
 package br.com.infnet.appemprestimo.model.negocio;
 
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "TLivro")
-@PrimaryKeyJoinColumn(name = "idProduto")
 public class Livro extends Produto {
 
 	private String autor;
+
+	public Livro() {
+		this.setTipoProduto("L");
+	}
 
 	@Override
 	public String toString() {

@@ -7,16 +7,14 @@ import org.springframework.stereotype.Service;
 
 import br.com.infnet.appemprestimo.model.clients.IEmprestimoClient;
 import br.com.infnet.appemprestimo.model.negocio.Emprestimo;
-import br.com.infnet.appemprestimo.model.repository.IEmprestimoRepository;
 
 @Service
 public class EmprestimoService {
 
-	@Autowired private IEmprestimoRepository repository;
 	@Autowired private IEmprestimoClient client;
 	
 	public void incluir(Emprestimo emprestimo) {
-		repository.save(emprestimo);
+		client.incluir(emprestimo);
 	}
 	
 	public List<Emprestimo> obterLista(){

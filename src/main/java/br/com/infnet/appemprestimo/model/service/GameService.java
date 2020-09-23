@@ -7,27 +7,17 @@ import org.springframework.stereotype.Service;
 
 import br.com.infnet.appemprestimo.model.clients.IGameClient;
 import br.com.infnet.appemprestimo.model.negocio.Game;
-import br.com.infnet.appemprestimo.model.repository.IGameRepository;
 
 @Service
-public class GameService {
+public class GameService extends ProdutoService {
 
-	@Autowired private IGameRepository gameRepository;
 	@Autowired private IGameClient gameClient;
 	
-	public List<Game> obterLista(){
+	public List<Game> obterGames(){
 		return gameClient.obterLista();
 	}
 	
 	public Game obterPorId(Integer id) {
 		return gameClient.obterPorId(id);
-	}
-
-	public void incluir(Game game) {
-		gameRepository.save(game);
-	}
-
-	public void excluir(Integer id) {
-		gameRepository.deleteById(id);
 	}
 }

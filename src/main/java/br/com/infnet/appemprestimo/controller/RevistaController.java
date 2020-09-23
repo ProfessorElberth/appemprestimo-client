@@ -28,7 +28,7 @@ public class RevistaController {
 	public String lista(
 				Model model
 			) {
-		model.addAttribute("revistas", revistaService.obterLista());
+		model.addAttribute("revistas", revistaService.obterRevistas());
 		
 		return "revista/lista";
 	}

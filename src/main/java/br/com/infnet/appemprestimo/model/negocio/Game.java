@@ -1,15 +1,12 @@
 package br.com.infnet.appemprestimo.model.negocio;
 
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "TGame")
-@PrimaryKeyJoinColumn(name = "idProduto")
 public class Game extends Produto {
 
 	private Float valor;
+	
+	public Game() {
+		this.setTipoProduto("G");
+	}
 	
 	@Override
 	public String toString() {

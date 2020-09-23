@@ -24,7 +24,9 @@
 	
 		<form action="/game/incluir" method="post">
 			<input type="hidden" name="id" value="${game.id}">
-		
+			
+			<input type="hidden" name="tipoProduto" value="G">
+
 		    <div class="form-group">
 		      <label for="usr">Descrição:</label>
 		      <input type="text" class="form-control" name="descricao" value="${game.descricao}">

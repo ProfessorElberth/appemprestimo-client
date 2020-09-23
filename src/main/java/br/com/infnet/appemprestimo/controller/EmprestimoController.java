@@ -50,11 +50,12 @@ public class EmprestimoController {
 				@RequestParam String[] produtosIds,
 				Emprestimo emprestimo
 			) {
+		emprestimo.setSolicitante(solicitanteService.obterPorId(emprestimo.getSolicitante().getId()));
 		
 		List<Produto> lista = new ArrayList<Produto>();
 		
 		for(String id : produtosIds) {
-			lista.add(new Produto(Integer.valueOf(id)));
+			lista.add(produtoService.obterPorId(Integer.valueOf(id)));
 		}
 		
 		emprestimo.setProdutos(lista);

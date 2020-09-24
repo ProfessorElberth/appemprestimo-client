@@ -27,12 +27,12 @@
 		
 		    <div class="form-group">
 		      <label for="usr">Descrição:</label>
-		      <input type="text" class="form-control" name="descricao" value="${livro.descricao}">
+		      <input type="text" class="form-control" name="descricao" value="${livro.descricao}" required>
 		    </div>
 	
 		    <div class="form-group">
 		      <label for="usr">Autor:</label>
-		      <input type="text" class="form-control" name="autor" value="${livro.autor}">
+		      <input type="text" class="form-control" name="autor" value="${livro.autor}" required>
 		    </div>
 
 	    	<button type="submit" class="btn btn-primary">Gravar</button>

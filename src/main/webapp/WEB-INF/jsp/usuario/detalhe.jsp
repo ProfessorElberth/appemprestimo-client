@@ -24,17 +24,17 @@
 			
 			  <div class="form-group">
 			    <label for="usr">Nome:</label>
-			    <input type="text" class="form-control" name="nome">
+			    <input type="text" class="form-control" name="nome" required>
 			  </div>
 			
 			  <div class="form-group">
 			    <label for="usr">Login:</label>
-			    <input type="text" class="form-control" name="login">
+			    <input type="text" class="form-control" name="login" required>
 			  </div>
 			
 			  <div class="form-group">
 			    <label for="usr">Senha:</label>
-			    <input type="password" class="form-control" name="senha">
+			    <input type="password" class="form-control" name="senha" required>
 			  </div>
 			
 			  <button type="submit" class="btn btn-primary">Cadastrar</button>

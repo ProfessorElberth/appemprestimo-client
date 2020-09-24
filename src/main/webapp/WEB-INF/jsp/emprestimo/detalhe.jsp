@@ -20,6 +20,12 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 	
+		<c:if test="${not empty msgError}">
+			<div class="alert alert-danger">
+			  <strong>Erro!!</strong> ${msgError}
+			</div>		
+		</c:if>
+
 		<h3>Empréstimos: ${operacao}</h3>
 	
 		<form action="/emprestimo/incluir" method="post">
@@ -35,7 +41,7 @@
 		
 		    <div class="form-group">
 		      <label for="usr">Descrição:</label>
-		      <input type="text" class="form-control" name="descricao">
+		      <input type="text" class="form-control" name="descricao" required>
 		    </div>
 	
 			<div class="form-group">

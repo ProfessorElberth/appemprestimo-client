@@ -2,6 +2,7 @@ package br.com.infnet.appemprestimo.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,22 +48,29 @@ public class EmprestimoController {
 	@PostMapping(value = "/emprestimo/incluir")
 	public String incluir(
 				Model model,
-				@RequestParam String[] produtosIds,
+				@RequestParam Optional<String[]> produtosIds,
 				Emprestimo emprestimo
 			) {
-		emprestimo.setSolicitante(solicitanteService.obterPorId(emprestimo.getSolicitante().getId()));
 		
-		List<Produto> lista = new ArrayList<Produto>();
-		
-		for(String id : produtosIds) {
-			lista.add(produtoService.obterPorId(Integer.valueOf(id)));
-		}
-		
-		emprestimo.setProdutos(lista);
-		
-		emprestimoService.incluir(emprestimo);
+		if(produtosIds.isPresent()) {
+			emprestimo.setSolicitante(solicitanteService.obterPorId(emprestimo.getSolicitante().getId()));
+			
+			List<Produto> lista = new ArrayList<Produto>();
+			
+			for(String id : produtosIds.get()) {
+				lista.add(produtoService.obterPorId(Integer.valueOf(id)));
+			}
+			
+			emprestimo.setProdutos(lista);
+			
+			emprestimoService.incluir(emprestimo);
 
-		return "redirect:/emprestimo/lista";
+			return "redirect:/emprestimo/lista";
+		}
+
+		model.addAttribute("msgError", "Selecione pelo menos um produto");
+		
+		return this.novo(model);
 	}
 	
 	@GetMapping(value = "/emprestimo/{id}/excluir")

@@ -27,7 +27,7 @@
 		
 		    <div class="form-group">
 		      <label for="usr">Nome:</label>
-		      <input type="text" class="form-control" name="nome" value="${solicitante.nome}">
+		      <input type="text" class="form-control" name="nome" value="${solicitante.nome}" required>
 		    </div>
 	
 	    	<button type="submit" class="btn btn-primary">Gravar</button>

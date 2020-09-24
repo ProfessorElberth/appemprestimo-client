@@ -29,12 +29,12 @@
 
 		    <div class="form-group">
 		      <label for="usr">Descrição:</label>
-		      <input type="text" class="form-control" name="descricao" value="${game.descricao}">
+		      <input type="text" class="form-control" name="descricao" value="${game.descricao}" required>
 		    </div>
 	
 		    <div class="form-group">
 		      <label for="usr">Valor:</label>
-		      <input type="text" class="form-control" name="valor" value="${game.valor}">
+		      <input type="text" class="form-control" name="valor" value="${game.valor}" required>
 		    </div>
 
 	    	<button type="submit" class="btn btn-primary">Gravar</button>

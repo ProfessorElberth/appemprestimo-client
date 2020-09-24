@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-	<a class="navbar-brand" href="/sair">AppEmprestimo: ${user.nome}</a>
+	<a class="navbar-brand" href="/logout">AppEmprestimo ${user.nome}</a>
 	
   	<ul class="navbar-nav">
 	    <li class="nav-item">
-	      <a class="nav-link" href="/emprestimos">Empréstimos</a>
+	      <a class="nav-link" href="/emprestimo/lista">Empréstimos</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="/solicitantes">Solicitantes</a>

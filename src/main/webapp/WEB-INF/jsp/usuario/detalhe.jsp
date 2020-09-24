@@ -39,8 +39,6 @@
 			
 			  <button type="submit" class="btn btn-primary">Cadastrar</button>
 			</form>
-			
-	  		<p><a href="/voltar">Voltar</a></p>
   		</div>
 	</div>
 

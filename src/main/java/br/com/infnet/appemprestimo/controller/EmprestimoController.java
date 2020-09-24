@@ -35,7 +35,7 @@ public class EmprestimoController {
 		return "emprestimo/detalhe";
 	}
 
-	@GetMapping(value = "/emprestimos")
+	@GetMapping(value = "/emprestimo/lista")
 	public String lista(
 				Model model
 			) {
@@ -62,7 +62,7 @@ public class EmprestimoController {
 		
 		emprestimoService.incluir(emprestimo);
 
-		return "redirect:/emprestimos";
+		return "redirect:/emprestimo/lista";
 	}
 	
 	@GetMapping(value = "/emprestimo/{id}/excluir")
@@ -78,7 +78,7 @@ public class EmprestimoController {
 			return this.lista(model);
 		}
 		
-		return "redirect:/emprestimos";
+		return "redirect:/emprestimo/lista";
 	}
 	@GetMapping(value = "/emprestimo/{id}/consultar")
 	public String consultar(
